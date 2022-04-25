@@ -1,3 +1,5 @@
+const carousel = document.getElementById('carousel')
+
 const slides = document.getElementsByClassName('carousel-item');
 
 let slidePosition = 0;
@@ -42,3 +44,7 @@ const hideAllSlides = () => {
 
 nextSlide.addEventListener('click', moveToNextSlide);
 prevSlide.addEventListener('click', moveToPrevSlide);
+
+if (carousel.classList.contains('auto-play')) {
+  setInterval(moveToNextSlide,5000)
+}
